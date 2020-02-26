@@ -83,7 +83,7 @@ def process_findings(dd, engagement_id, dir, build=None):
 
 def processFiles(dd, engagement_id, file, scanner=None, build=None):
     upload_scan = None
-    scannerName = None
+    scannerName = "SonarQube Scan"
     path=os.path.dirname(file)
     name = os.path.basename(file)
     tool = os.path.basename(path)
@@ -137,6 +137,8 @@ def processFiles(dd, engagement_id, file, scanner=None, build=None):
             scannerName = "OpenVAS CSV"
         elif tool == "snyk":
             scannerName = "Snyk Scan"
+        elif tool == "sonarqube"
+            scannerName = "SonarQube Scan"
 
         if scannerName is not None:
             print "Uploading " + scannerName + " scan: " + file
