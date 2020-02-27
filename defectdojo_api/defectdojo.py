@@ -45,6 +45,13 @@ class DefectDojoAPI(object):
         if not self.verify_ssl:
             requests.packages.urllib3.disable_warnings()  # Disabling SSL warning messages if verification is disabled.
 
+    ###### Product Type API #######
+    def list_product_types(self):
+        """Returns the DefectDojo Product Types.
+
+        """
+        return self._request('GET', 'product_types/')
+
     ###### Helper Functions ######
     def get_user_uri(self, user_id):
         """Returns the DefectDojo API URI for a user.
